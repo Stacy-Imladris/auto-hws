@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
+import {ChangeEvent, FC, KeyboardEvent, useState} from 'react'
 import Greeting from './Greeting'
 import {UserType} from './HW3'
 
@@ -27,7 +27,7 @@ export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () => v
     if (e.key === 'Enter') addUser()
 }
 
-const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
+const GreetingContainer: FC<GreetingContainerPropsType> = ({
                                                                      users,
                                                                      addUserCallback,
                                                                  }) => {
