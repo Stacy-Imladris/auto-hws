@@ -28,13 +28,9 @@ function Clock() {
         setShow(false)
     }
 
-    const time = date.toLocaleTimeString('ru-Ru')
-    const stringTime = time//.substring(0, time.length - 3)
-
+    const stringTime = date.toLocaleTimeString('ru-Ru')
     const stringDate = date.toLocaleDateString('ru-Ru');
-
     const stringDay = new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(date)
-
     const stringMonth = new Intl.DateTimeFormat('en-US', {month: 'long'}).format(date)
 
     return (
