@@ -29,13 +29,14 @@ function Clock() {
         setShow(false)
     }
 
-    const stringTime = new Intl.DateTimeFormat("ru", {
-        hour: "numeric",
-        minute: "numeric"
-    }).format(date)
-    const stringDate = new Intl.DateTimeFormat("en-US").format(date)
-    const stringDay = new Intl.DateTimeFormat('en-GB', {weekday: 'long'}).format(date)
-    const stringMonth = new Intl.DateTimeFormat('en-GB', {month: 'long'}).format(date)
+    const time = date.toLocaleTimeString('ru-Ru')
+    const stringTime = time.substring(0, time.length - 3)
+
+    const stringDate = date.toLocaleDateString('ru-Ru')
+
+    const stringDay = new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(date)
+
+    const stringMonth = new Intl.DateTimeFormat('en-US', {month: 'long'}).format(date)
 
     return (
         <div className={s.clock}>
