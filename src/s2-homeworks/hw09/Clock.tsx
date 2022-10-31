@@ -9,7 +9,6 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
     const start = () => {
-        stop()
         const id: number = +setInterval(() => {
             setDate(new Date())
         }, 1000)
@@ -30,9 +29,9 @@ function Clock() {
     }
 
     const time = date.toLocaleTimeString('ru-Ru')
-    const stringTime = time.substring(0, time.length - 3)
+    const stringTime = time//.substring(0, time.length - 3)
 
-    const stringDate = date.toLocaleDateString('ru-Ru')
+    const stringDate = date.toLocaleDateString('ru-Ru');
 
     const stringDay = new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(date)
 
