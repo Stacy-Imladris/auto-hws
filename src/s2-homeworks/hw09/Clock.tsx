@@ -18,6 +18,7 @@ function Clock() {
 
     const stop = () => {
         clearInterval(timerId)
+        setTimerId(undefined)
     }
 
     const onMouseEnter = () => {
@@ -28,9 +29,11 @@ function Clock() {
         setShow(false)
     }
 
-    const stringTime = date.toLocaleTimeString()
-    const stringDate = date.toLocaleDateString()
-
+    const stringTime = new Intl.DateTimeFormat("ru", {
+        hour: "numeric",
+        minute: "numeric"
+    }).format(date)
+    const stringDate = new Intl.DateTimeFormat("en-US").format(date)
     const stringDay = new Intl.DateTimeFormat('en-GB', {weekday: 'long'}).format(date)
     const stringMonth = new Intl.DateTimeFormat('en-GB', {month: 'long'}).format(date)
 
